@@ -1,0 +1,14 @@
+RewriteEngine On
+#RewriteBase /
+
+# Block access to sensitive directories
+#RewriteRule ^(controllers|Models|msgraph|vendor)/ - [F,L]
+
+# Allow access to static assets
+RewriteCond %{REQUEST_URI} ^/(CSS|JS|svg)/ [NC]
+RewriteRule ^ - [L]
+
+# Route all other requests to index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]

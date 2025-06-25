@@ -1,0 +1,11 @@
+{
+    "name": "jacob/pwr",
+    "autoload": {
+        "psr-4": {
+            "Amadev\\Models\\": "Models/"
+        }
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
